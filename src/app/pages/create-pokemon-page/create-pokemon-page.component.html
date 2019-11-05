@@ -1,0 +1,22 @@
+<h1>Créer ton Pokemon</h1>
+
+<form (submit)="myForm.valid && createPokemon()" #myForm="ngForm" >
+<h2>Nom :</h2>
+  <input type="text" [(ngModel)]="animal.nom" name="nom" #nomRef=ngModel required>
+  <div *ngIf="nomRef?.errors?.required && myForm.submitted">Name is required</div>
+
+<h2>Image URL :</h2>
+  <input type="text"[(ngModel)]="animal.image" name="image" #imageRef=ngModel required>
+  <div *ngIf="imageRef?.errors?.required && myForm.submitted">Image is required</div>
+
+<h2>Description :</h2>
+  <input type="text" [(ngModel)]="animal.description" name="description" #descriptionRef=ngModel required>
+  <div *ngIf="descriptionRef?.errors?.required && myForm.submitted">Description is required</div>
+
+  <button type="submit">Ajouter</button>
+
+</form>
+
+
+
+
